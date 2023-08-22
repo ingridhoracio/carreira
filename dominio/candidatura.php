@@ -1,32 +1,33 @@
 <?php
-    class Empresa {
-        private $id_candidatura;
-        private $data;
-        private $data_contratacao;
-        private $data_entrevista;
-        private $data_encerramento;
-        private $requisitos;
-        private $feedback;
-        private $beneficios;
-        private $salario;
-        private $tipo_localidade;
-        private $experiencia;
-        private $titulacao;
-        private $disponibilidade;
-    
+class Candidatura {
+    private $id;
+    private $data;
+    private $dataContratacao;
+    private $dataEncerramento;
+    private $dataEntrevista;
+    private $requisitos;
+    private $feedback;
+    private $beneficios;
+    private $salario;
+    private $tipoLocalidade;
+    private $experiencia;
+    private $titulacao;
+    private $disponibilidade;
+
+
 	/**
 	 * @return mixed
 	 */
-	public function getId_candidatura() {
-		return $this->id_candidatura;
+	public function getId() {
+		return $this->id;
 	}
 	
 	/**
-	 * @param mixed $id_candidatura 
+	 * @param mixed $id 
 	 * @return self
 	 */
-	public function setId_candidatura($id_candidatura): self {
-		$this->id_candidatura = $id_candidatura;
+	public function setId($id): self {
+		$this->id = $id;
 		return $this;
 	}
 	
@@ -49,48 +50,48 @@
 	/**
 	 * @return mixed
 	 */
-	public function getData_contratacao() {
-		return $this->data_contratacao;
+	public function getDataContratacao() {
+		return $this->dataContratacao;
 	}
 	
 	/**
-	 * @param mixed $data_contratacao 
+	 * @param mixed $dataContratacao 
 	 * @return self
 	 */
-	public function setData_contratacao($data_contratacao): self {
-		$this->data_contratacao = $data_contratacao;
+	public function setDataContratacao($dataContratacao): self {
+		$this->dataContratacao = $dataContratacao;
 		return $this;
 	}
 	
 	/**
 	 * @return mixed
 	 */
-	public function getData_entrevista() {
-		return $this->data_entrevista;
+	public function getDataEncerramento() {
+		return $this->dataEncerramento;
 	}
 	
 	/**
-	 * @param mixed $data_entrevista 
+	 * @param mixed $dataEncerramento 
 	 * @return self
 	 */
-	public function setData_entrevista($data_entrevista): self {
-		$this->data_entrevista = $data_entrevista;
+	public function setDataEncerramento($dataEncerramento): self {
+		$this->dataEncerramento = $dataEncerramento;
 		return $this;
 	}
 	
 	/**
 	 * @return mixed
 	 */
-	public function getData_encerramento() {
-		return $this->data_encerramento;
+	public function getDataEntrevista() {
+		return $this->dataEntrevista;
 	}
 	
 	/**
-	 * @param mixed $data_encerramento 
+	 * @param mixed $dataEntrevista 
 	 * @return self
 	 */
-	public function setData_encerramento($data_encerramento): self {
-		$this->data_encerramento = $data_encerramento;
+	public function setDataEntrevista($dataEntrevista): self {
+		$this->dataEntrevista = $dataEntrevista;
 		return $this;
 	}
 	
@@ -161,16 +162,16 @@
 	/**
 	 * @return mixed
 	 */
-	public function getTipo_localidade() {
-		return $this->tipo_localidade;
+	public function getTipoLocalidade() {
+		return $this->tipoLocalidade;
 	}
 	
 	/**
-	 * @param mixed $tipo_localidade 
+	 * @param mixed $tipoLocalidade 
 	 * @return self
 	 */
-	public function setTipo_localidade($tipo_localidade): self {
-		$this->tipo_localidade = $tipo_localidade;
+	public function setTipoLocalidade($tipoLocalidade): self {
+		$this->tipoLocalidade = $tipoLocalidade;
 		return $this;
 	}
 	

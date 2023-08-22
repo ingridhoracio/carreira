@@ -1,10 +1,27 @@
 <?php
-    class Empresa {
-        private $nome;
-        private $email;
-        private $telefone;
-        private $id_recrutador;
-    
+class Recrutador {
+    private $id;
+    private $nome;
+    private $email;
+    private $telefone;
+
+
+	/**
+	 * @return mixed
+	 */
+	public function getId() {
+		return $this->id;
+	}
+	
+	/**
+	 * @param mixed $id 
+	 * @return self
+	 */
+	public function setId($id): self {
+		$this->id = $id;
+		return $this;
+	}
+	
 	/**
 	 * @return mixed
 	 */
@@ -52,21 +69,4 @@
 		$this->telefone = $telefone;
 		return $this;
 	}
-	
-	/**
-	 * @return mixed
-	 */
-	public function getId_recrutador() {
-		return $this->id_recrutador;
-	}
-	
-	/**
-	 * @param mixed $id_recrutador 
-	 * @return self
-	 */
-	public function setId_recrutador($id_recrutador): self {
-		$this->id_recrutador = $id_recrutador;
-		return $this;
-	}
 }
-

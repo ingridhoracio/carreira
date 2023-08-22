@@ -1,11 +1,31 @@
 <?php
-    class Empresa {
-        private $nome;
-        private $geolocalizacao;
-        private $cidadeibge;
-        private $telefone;
-        private $id_empresa;
+class Empresa  {
+    private $id;
+    private $nome;
+    private $geolocalizacao;
+    private $cidadeIbge;
+    private $telefone;
+
+
     
+    
+
+	/**
+	 * @return mixed
+	 */
+	public function getId() {
+		return $this->id;
+	}
+	
+	/**
+	 * @param mixed $id 
+	 * @return self
+	 */
+	public function setId($id): self {
+		$this->id = $id;
+		return $this;
+	}
+	
 	/**
 	 * @return mixed
 	 */
@@ -41,16 +61,16 @@
 	/**
 	 * @return mixed
 	 */
-	public function getCidadeibge() {
-		return $this->cidadeibge;
+	public function getCidadeIbge() {
+		return $this->cidadeIbge;
 	}
 	
 	/**
-	 * @param mixed $cidadeibge 
+	 * @param mixed $cidadeIbge 
 	 * @return self
 	 */
-	public function setCidadeibge($cidadeibge): self {
-		$this->cidadeibge = $cidadeibge;
+	public function setCidadeIbge($cidadeIbge): self {
+		$this->cidadeIbge = $cidadeIbge;
 		return $this;
 	}
 	
@@ -67,22 +87,6 @@
 	 */
 	public function setTelefone($telefone): self {
 		$this->telefone = $telefone;
-		return $this;
-	}
-	
-	/**
-	 * @return mixed
-	 */
-	public function getId_empresa() {
-		return $this->id_empresa;
-	}
-	
-	/**
-	 * @param mixed $id_empresa 
-	 * @return self
-	 */
-	public function setId_empresa($id_empresa): self {
-		$this->id_empresa = $id_empresa;
 		return $this;
 	}
 }

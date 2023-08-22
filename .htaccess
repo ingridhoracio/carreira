@@ -2,7 +2,7 @@
 RewriteEngine On
 
 # Definição da rota principal
-RewriteBase /
+RewriteBase /carreira
 
 # Se o diretório ou arquivos digitados na URL não existirem, seguir a RewriteRule
 RewriteCond %{REQUEST_FILENAME} !-d       
