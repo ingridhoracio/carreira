@@ -18,9 +18,14 @@
     {
         require __DIR__ . '/pages/cargo/index.php';
     }
-    protected function empresa()
+    protected function empresa($operation)
     {
         require __DIR__ . '/pages/empresa/index.php';
+        require __DIR__ . '/pages/empresa/empresa_controller.php';
+        $controller = new EmpresaController();
+        $controller->$operation();
+
+        
     }
     protected function recrutador()
     {
