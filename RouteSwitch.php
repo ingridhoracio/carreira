@@ -20,12 +20,14 @@
     }
     protected function empresa($operation)
     {
-        require __DIR__ . '/pages/empresa/index.php';
         require __DIR__ . '/pages/empresa/empresa_controller.php';
         $controller = new EmpresaController();
-        $controller->$operation();
-
-        
+        if ($operation==null || $operation=="") {
+            $controller->listar();    
+        } else {
+            $controller->$operation();
+        }
+        require __DIR__ . '/pages/empresa/index.php';
     }
     protected function recrutador()
     {
