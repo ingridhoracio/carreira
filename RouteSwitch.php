@@ -27,7 +27,6 @@
         } else {
             $controller->$operation();
         }
-        require __DIR__ . '/pages/empresa/index.php';
     }
     protected function recrutador()
     {

@@ -15,7 +15,7 @@
           </thead>  
           <tbody>
             <?php
-              foreach($controller->lista as $empresa) {
+              foreach($empresas as $empresa) {
             ?>
              <tr>
                 <td><a href="#"><?=$empresa->getNome()?></a></td>
