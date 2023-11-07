@@ -12,11 +12,6 @@
 
 <div id="map"></div>
 
-
-
-
-
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
@@ -28,13 +23,18 @@
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-
+    // Atualiza o valor do input geolocalizacao
+    function atualizarInputGeolocalizacao(lat, lon){
+       let inputgeo = document.getElementById("geolocalizacao");
+       inputgeo.value = `{${lat}, ${lon}}`;
+    }
 
     function obterCoordenadasGoogleMaps() {
         const inputEndereco = document.getElementById("endereco");
         const endereco = inputEndereco.value;
         const apiUrl = "https://nominatim.openstreetmap.org/search?q="+endereco+"&format=json";
-
+        const nomeInput = document.getElementById("nome");
+        const nome = nomeInput.value;
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -44,8 +44,14 @@
                     const coordenadas = data[0];
                     console.log(`Latitude: ${coordenadas.lat}, Longitude: ${coordenadas.lng}`);
                     map.flyTo([coordenadas.lat, coordenadas.lon], 12);
+                    //chamando a função que atualiza as coordenadas
+                    //no formulário    
+                    atualizarInputGeolocalizacao(coordenadas.lat, coordenadas.lon);    
+
+
+
                     L.marker([coordenadas.lat, coordenadas.lon]).addTo(map)
-    .bindPopup('Empresa')
+    .bindPopup(nome)
     .openPopup();
                 } else {
 
