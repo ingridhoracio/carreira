@@ -72,7 +72,29 @@
      carregarEstadosIBGE();
 
 
-     function carregarCidadesIBGE(){
+     function carregarCidadesIBGE(estado){
+        let url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'+estado+'/municipios';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                    if (data!=null && data.length>0) {
+
+                        
+                        var selectCidade = document.getElementById("cidades");
+                        data.forEach(element => {
+                            
+                            let option = document.createElement('option');                          
+                            option.innerText = element['nome'];
+                            selectCidade.appendChild(option);
+
+                        });
+
+
+                    }
+            }).catch(error => {
+                    console.log("Erro carregando estados "+error);
+                });;
         
      }
+     carregarCidadesIBGE();
 </script>    
